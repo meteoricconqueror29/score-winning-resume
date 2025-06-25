@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -100,4 +101,90 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Print styles for ATS-friendly resume */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  #resume-preview {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0.5in !important;
+    box-shadow: none !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+  }
+  
+  #resume-preview h1 {
+    font-size: 18pt !important;
+    margin-bottom: 8pt !important;
+  }
+  
+  #resume-preview h2 {
+    font-size: 14pt !important;
+    margin-bottom: 6pt !important;
+    margin-top: 12pt !important;
+  }
+  
+  #resume-preview h3 {
+    font-size: 12pt !important;
+    margin-bottom: 4pt !important;
+  }
+  
+  #resume-preview .space-y-4 > * + * {
+    margin-top: 8pt !important;
+  }
+  
+  #resume-preview .space-y-3 > * + * {
+    margin-top: 6pt !important;
+  }
+  
+  #resume-preview .space-y-1 > * + * {
+    margin-top: 2pt !important;
+  }
+  
+  #resume-preview ul {
+    margin-top: 4pt !important;
+    margin-bottom: 4pt !important;
+  }
+  
+  #resume-preview li {
+    margin-bottom: 2pt !important;
+  }
+  
+  /* Ensure page breaks are handled well */
+  #resume-preview section {
+    page-break-inside: avoid;
+  }
+  
+  #resume-preview .experience-item {
+    page-break-inside: avoid;
+  }
+}
+
+/* Custom scrollbar for better UX */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }
