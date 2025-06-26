@@ -118,11 +118,20 @@
     font-family: Arial, Helvetica, sans-serif !important;
   }
   
-  .print\:hidden {
-    display: none !important;
+  /* Hide everything except the resume preview */
+  body * {
+    visibility: hidden !important;
+  }
+  
+  #resume-preview,
+  #resume-preview * {
+    visibility: visible !important;
   }
   
   #resume-preview {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
     max-width: none !important;
     width: 100% !important;
     margin: 0 !important;
