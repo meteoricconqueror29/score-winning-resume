@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -140,7 +139,7 @@ const Index = () => {
   });
 
   const [activeTab, setActiveTab] = useState('personal');
-  const [showPreview, setShowPreview] = useState(false);
+  const [showPreview, setShowPreview] = useState(true);
 
   const updatePersonalInfo = (info: PersonalInfo) => {
     setResumeData(prev => ({ ...prev, personalInfo: info }));
@@ -249,11 +248,9 @@ const Index = () => {
                   </Button>
                 </div>
                 
-                {showPreview && (
-                  <div className="mt-4 border rounded-lg p-4 bg-white shadow-inner max-h-96 overflow-y-auto">
-                    <ResumePreview resumeData={resumeData} />
-                  </div>
-                )}
+                <div className="mt-4 border rounded-lg p-4 bg-white shadow-inner max-h-96 overflow-y-auto">
+                  <ResumePreview resumeData={resumeData} />
+                </div>
               </CardContent>
             </Card>
           </div>
