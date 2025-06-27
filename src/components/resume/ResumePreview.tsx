@@ -150,6 +150,10 @@ const ResumePreview = ({ resumeData }: ResumePreviewProps) => {
                   </h3>
                   <p className="text-gray-800 text-xs">{edu.institution}</p>
                   {edu.gpa && <p className="text-xs text-gray-700">GPA: {edu.gpa}</p>}
+                  
+                  {/* <p className="text-sm font-medium text-gray-900">
+                    {edu.degree} {edu.field && `in ${edu.field}`}, {edu.institution}
+                  </p> */}
                 </div>
                 <div className="text-right text-xs text-gray-700 font-medium">
                   <p>{formatDate(edu.graduationDate)}</p>

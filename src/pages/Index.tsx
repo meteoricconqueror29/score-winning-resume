@@ -50,7 +50,7 @@ const Index = () => {
       linkedin: 'linkedin.com/in/dipayan-majumdar',
       website: 'dipayan-portfolio.dev',
       github: 'github.com/MeteoricConqueror29',
-      summary: 'Full Stack Developer with expertise in Laravel, React, and modern web technologies. Proven experience in e-commerce platforms, payment systems, and multi-marketplace integrations, contributed to PCI-DSS Level 1 compliant payment solutions at Paytia. Currently leading development of inventory management systems with AWS deployment experience.'
+      summary: 'Full Stack Developer with expertise in Laravel, React, and modern web technologies. Proven experience in e-commerce platforms, payment systems, and multi-marketplace integrations, contributed to PCI-DSS Level 1 compliant payment solutions at Paytia. Currently leading development of inventory management systems with AWS deployment experience, Reduced sync errors across 5 marketplaces by 60% using Redis and scheduled queues.'
     },
     experience: [
       {
@@ -116,8 +116,8 @@ const Index = () => {
         degree: 'Higher Secondary (10+2)',
         field: 'WBCHSE',
         location: '',
-        graduationDate: '2019-12',
-        gpa: '87.23%'
+        graduationDate: '2019-05',
+        gpa: '8.72'
       },
       {
         id: '3',
@@ -125,8 +125,8 @@ const Index = () => {
         degree: 'Secondary (10th)',
         field: 'WBBSE',
         location: '',
-        graduationDate: '2017-12',
-        gpa: '83.27%'
+        graduationDate: '2017-05',
+        gpa: '8.33'
       }
     ],
     skills: [
