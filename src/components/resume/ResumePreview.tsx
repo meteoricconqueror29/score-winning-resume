@@ -38,12 +38,12 @@ const ResumePreview = ({ resumeData }: ResumePreviewProps) => {
   return (
     <div className="max-w-4xl mx-auto bg-white p-6 shadow-lg print:shadow-none print:p-0 text-sm leading-tight" id="resume-preview">
       {/* Header */}
-      <header className="border-b-2 border-gray-300 pb-3 mb-4">
+      <header className="border-b border-gray-300 pb-2 mb-1">
         <h1 className="text-2xl font-bold text-gray-900 mb-2 tracking-wide">
           {personalInfo.fullName || 'Your Name'}
         </h1>
         
-        <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-700">
+        <div className="flex flex-wrap gap-x-3 gap-y-1 text-[10px] text-gray-700 leading-tight">
           {personalInfo.email && (
             <div className="flex items-center gap-1">
               <Mail className="h-3 w-3" />
@@ -79,7 +79,7 @@ const ResumePreview = ({ resumeData }: ResumePreviewProps) => {
 
       {/* Professional Summary */}
       {personalInfo.summary && (
-        <section className="mb-4">
+        <section className="mb-2">
           <h2 className="text-base font-bold text-gray-900 mb-2 border-b border-gray-300 pb-1 uppercase tracking-wide">
             PROFESSIONAL SUMMARY
           </h2>
@@ -89,7 +89,7 @@ const ResumePreview = ({ resumeData }: ResumePreviewProps) => {
 
       {/* Technical Skills */}
       {skills.length > 0 && (
-        <section className="mb-4">
+        <section className="mb-2">
           <h2 className="text-base font-bold text-gray-900 mb-2 border-b border-gray-300 pb-1 uppercase tracking-wide">
             TECHNICAL SKILLS
           </h2>
@@ -106,7 +106,7 @@ const ResumePreview = ({ resumeData }: ResumePreviewProps) => {
 
       {/* Professional Experience */}
       {experience.length > 0 && (
-        <section className="mb-4">
+        <section className="mb-2">
           <h2 className="text-base font-bold text-gray-900 mb-2 border-b border-gray-300 pb-1 uppercase tracking-wide">
             PROFESSIONAL EXPERIENCE
           </h2>
@@ -124,7 +124,7 @@ const ResumePreview = ({ resumeData }: ResumePreviewProps) => {
                     </p>
                   </div>
                 </div>
-                <ul className="list-disc list-outside text-gray-800 space-y-0.5 ml-4 text-xs leading-relaxed">
+                <ul className="list-disc list-outside text-gray-800 space-y-0.5 ml-4 text-[11px] leading-tight">
                   {exp.description.filter(desc => desc.trim()).map((desc, index) => (
                     <li key={index}>{desc}</li>
                   ))}
@@ -137,11 +137,11 @@ const ResumePreview = ({ resumeData }: ResumePreviewProps) => {
 
       {/* Education */}
       {education.length > 0 && (
-        <section className="mb-4">
+        <section className="mb-2 break-inside-avoid">
           <h2 className="text-base font-bold text-gray-900 mb-2 border-b border-gray-300 pb-1 uppercase tracking-wide">
             EDUCATION
           </h2>
-          <div className="space-y-2">
+          <div className="space-y-2 break-inside-avoid">
             {education.map((edu) => (
               <div key={edu.id} className="flex justify-between items-start">
                 <div>

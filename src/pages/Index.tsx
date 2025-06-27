@@ -50,7 +50,7 @@ const Index = () => {
       linkedin: 'linkedin.com/in/dipayan-majumdar',
       website: 'dipayan-portfolio.dev',
       github: 'github.com/MeteoricConqueror29',
-      summary: 'Full Stack Developer with hands-on experience building modern web applications using the TALL stack and JavaScript frameworks. Proven track record in developing secure payment systems and real-time features, with professional experience across both e-commerce marketplaces and fintech platforms. Currently leading the development of multi-channel inventory and order management systems. Previously contributed to PCI-DSS Level 1 compliant payment solutions at Paytia, focusing on backend architecture and data security with DevOps practices.'
+      summary: 'Full Stack Developer with expertise in Laravel, React, and modern web technologies. Proven experience in e-commerce platforms, payment systems, and multi-marketplace integrations, contributed to PCI-DSS Level 1 compliant payment solutions at Paytia. Currently leading development of inventory management systems with AWS deployment experience.'
     },
     experience: [
       {
