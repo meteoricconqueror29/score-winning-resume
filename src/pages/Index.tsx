@@ -23,6 +23,14 @@ export interface Experience {
   description: string[];
 }
 
+export interface Project {
+  id: string;
+  name: string;
+  description: string;
+  tech: string[];
+  // link?: string;
+}
+
 export interface Education {
   id: string;
   institution: string;
@@ -38,6 +46,7 @@ export interface ResumeData {
   experience: Experience[];
   education: Education[];
   skills: string[];
+  projects: Project[];
 }
 
 const Index = () => {
@@ -136,7 +145,33 @@ const Index = () => {
       'Shopify API', 'Amazon SP-API', 'Walmart API', 'Wayfair API', 'Houzz API', 'eBay API',
       'Stripe', 'PayPal', 'Twilio', 'WebRTC', 'Webhooks',
       'Git', 'AWS EC2', 'Nginx', 'Supervisor', 'Linux', 'Postman', 'VS Code'
-    ]
+    ],
+    projects: [
+      {
+        id: '1',
+        name: 'Real-Time Chat Application',
+        description: 'Built a full-featured messaging app with instant messaging, emoji/markdown support, file sharing, group management, and responsive UI. Used background jobs for async processing.',
+        tech: ['ReactJS', 'Laravel', 'WebSockets', 'Redis'],
+      },
+      {
+        id: '2',
+        name: 'Multi-Vendor E-commerce Marketplace',
+        description: 'Developed a full-stack system with vendor dashboard, real-time UI, SSR, role-based access, and integrated Stripe for payments.',
+        tech: ['Laravel', 'React (TypeScript)', 'Inertia.js v2', 'FilamentPHP', 'Stripe'],
+      },
+      {
+        id: '3',
+        name: 'Social Media Website',
+        description: 'Created a small social platform with timelines, posts, likes/comments using Laravel and Vue.js, deployed on shared hosting.',
+        tech: ['Laravel', 'Vue.js', 'Inertia.js', 'Tailwind CSS'],
+      },
+      {
+        id: '4',
+        name: 'Car Selling Website',
+        description: 'Simple car listing/selling site built with Laravel, supporting user-friendly submissions and browsing.',
+        tech: ['Laravel'],
+      }
+    ]    
   };
 
   return (
