@@ -83,7 +83,9 @@ const ResumePreview = ({ resumeData }: ResumePreviewProps) => {
         <h2 className="text-lg font-bold text-gray-900 mb-2 border-b border-gray-300 pb-1 uppercase tracking-wide">
           Professional Summary
         </h2>
-        <p className="text-gray-800 text-justify">{personalInfo.summary}</p>
+        <p className="text-sm text-gray-800 text-justify leading-[1.4]">
+          {personalInfo.summary}
+        </p>
       </section>
     )}
 
@@ -122,7 +124,7 @@ const ResumePreview = ({ resumeData }: ResumePreviewProps) => {
                   <p>{formatDate(exp.startDate)} - {exp.current ? 'Present' : formatDate(exp.endDate)}</p>
                 </div>
               </div>
-              <ul className="list-disc ml-5 text-sm text-gray-800 space-y-1 leading-relaxed">
+              <ul className="list-disc ml-5 text-sm text-gray-800 space-y-[0.3rem] leading-[1.35]">
                 {exp.description.map((desc, idx) => (
                   <li key={idx}>{desc}</li>
                 ))}
