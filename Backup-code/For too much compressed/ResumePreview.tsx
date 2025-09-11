@@ -46,16 +46,16 @@ const ResumePreview = ({ resumeData }: ResumePreviewProps) => {
 
   return (
     <div
-      className="max-w-4xl mx-auto bg-white p-6 shadow-lg print:shadow-none print:p-0 text-base leading-snug"
+      className="max-w-4xl mx-auto bg-white p-6 shadow-lg print:shadow-none print:p-0 text-sm leading-tight"
       id="resume-preview"
     >
       {/* Header */}
-      <header className="border-b border-gray-300 pb-1 mb-3">
+      <header className="border-b border-gray-300 pb-1 mb-2">
         <h1 className="text-2xl font-bold text-gray-900 mb-1 tracking-wide">
           {personalInfo.fullName || 'Your Name'}
         </h1>
 
-        <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-gray-700 leading-snug">
+        <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-700 leading-tight">
           {personalInfo.email && (
             <div className="flex items-center gap-1">
               <Mail className="h-3 w-3" />
@@ -91,8 +91,8 @@ const ResumePreview = ({ resumeData }: ResumePreviewProps) => {
 
       {/* Experience */}
       {experience.length > 0 && (
-        <section className="mb-3">
-          <h2 className="text-lg font-bold text-gray-900 mb-1 border-b border-gray-300 pb-0.5 uppercase tracking-wide">
+        <section className="mb-2">
+          <h2 className="text-base font-bold text-gray-900 mb-1 border-b border-gray-300 pb-0.5 uppercase tracking-wide">
             Professional Experience
           </h2>
           <div className="space-y-2">
@@ -100,16 +100,16 @@ const ResumePreview = ({ resumeData }: ResumePreviewProps) => {
               <div key={exp.id} className="page-break-inside-avoid">
                 <div className="flex justify-between items-start mb-0.5">
                   <div>
-                    <h3 className="text-base font-semibold text-gray-900">{exp.position}</h3>
+                    <h3 className="text-sm font-semibold text-gray-900">{exp.position}</h3>
                     <p className="text-gray-800">{exp.company}</p>
                   </div>
-                  <div className="text-right text-sm text-gray-700 font-medium">
+                  <div className="text-right text-xs text-gray-700 font-medium">
                     <p>
                       {formatDate(exp.startDate)} – {exp.current ? 'Present' : formatDate(exp.endDate)}
                     </p>
                   </div>
                 </div>
-                <ul className="list-disc ml-5 text-sm text-gray-800 space-y-1 leading-snug">
+                <ul className="list-disc ml-4 text-xs text-gray-800 space-y-0.5 leading-snug">
                   {exp.description.map((desc, idx) => (
                     <li key={idx}>{renderDescription(desc)}</li>
                   ))}
@@ -122,38 +122,38 @@ const ResumePreview = ({ resumeData }: ResumePreviewProps) => {
 
       {/* Skills */}
       {skills.length > 0 && (
-        <section className="mb-3">
-          <h2 className="text-lg font-bold text-gray-900 mb-1 border-b border-gray-300 pb-0.5 uppercase tracking-wide">
+        <section className="mb-2">
+          <h2 className="text-base font-bold text-gray-900 mb-1 border-b border-gray-300 pb-0.5 uppercase tracking-wide">
             Technical Skills
           </h2>
-          <p className="text-sm text-gray-800">
-            <strong>Backend & Frameworks:</strong> PHP, <strong>Laravel</strong>, CodeIgniter, Filament, Livewire, Blade
+          <p className="text-xs text-gray-800">
+            <strong>Backend & Frameworks:</strong> PHP, Laravel, CodeIgniter, Filament, Livewire, Blade
           </p>
-          <p className="text-sm text-gray-800">
-            <strong>Frontend:</strong> React.js, <strong>JavaScript</strong>, Inertia.js, Alpine.js, HTML, CSS, Tailwind
+          <p className="text-xs text-gray-800">
+            <strong>Frontend:</strong> React.js, JavaScript, Inertia.js, Alpine.js, HTML, CSS, Tailwind
           </p>
-          <p className="text-sm text-gray-800">
-            <strong>Database & Storage:</strong> <strong>MySQL</strong>, Redis, Amazon RDS, S3
+          <p className="text-xs text-gray-800">
+            <strong>Database & Storage:</strong> MySQL, Redis, Amazon RDS, S3
           </p>
-          <p className="text-sm text-gray-800">
+          <p className="text-xs text-gray-800">
             <strong>APIs:</strong> Shopify, Amazon SP-API, Walmart, Wayfair, Houzz, eBay
           </p>
-          <p className="text-sm text-gray-800">
+          <p className="text-xs text-gray-800">
             <strong>Payments & Comms:</strong> Stripe, PayPal, Twilio, WebRTC, Webhooks
           </p>
-          <p className="text-sm text-gray-800">
-            <strong>DevOps & Tools:</strong> Git, <strong>AWS EC2</strong>, Nginx, Supervisor, <strong>Linux</strong>, Postman, <strong>Cursor</strong>, <strong>OpenAI</strong>
+          <p className="text-xs text-gray-800">
+            <strong>DevOps & Tools:</strong> Git, AWS EC2, Nginx, Supervisor, Linux, Postman, VS Code
           </p>
         </section>
       )}
 
       {/* Projects */}
       {projects.length > 0 && (
-        <section className="mb-3">
-          <h2 className="text-lg font-bold text-gray-900 mb-1 border-b border-gray-300 pb-0.5 uppercase tracking-wide">
+        <section className="mb-2">
+          <h2 className="text-base font-bold text-gray-900 mb-1 border-b border-gray-300 pb-0.5 uppercase tracking-wide">
             Projects
           </h2>
-          <ul className="list-disc ml-5 text-sm text-gray-800 space-y-1">
+          <ul className="list-disc ml-4 text-xs text-gray-800 space-y-0.5">
             {projects.map((project) => (
               <li key={project.id}>
                 <strong>{project.name}:</strong> {renderDescription(project.description)}
@@ -166,10 +166,10 @@ const ResumePreview = ({ resumeData }: ResumePreviewProps) => {
       {/* Education */}
       {education.length > 0 && (
         <section className="mb-1 break-inside-avoid">
-          <h2 className="text-lg font-bold text-gray-900 mb-1 border-b border-gray-300 pb-0.5 uppercase tracking-wide">
+          <h2 className="text-base font-bold text-gray-900 mb-1 border-b border-gray-300 pb-0.5 uppercase tracking-wide">
             Education
           </h2>
-          <ul className="list-disc ml-5 text-sm text-gray-800 space-y-1">
+          <ul className="list-disc ml-4 text-xs text-gray-800 space-y-0.5">
             {education.map((edu) => (
               <li key={edu.id}>
                 <strong>{edu.degree} {edu.field && `in ${edu.field}`}</strong> – {edu.institution}

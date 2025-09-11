@@ -1,16 +1,12 @@
 import puppeteer from 'puppeteer';
 
 (async () => {
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  });
-
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
   await page.goto('http://localhost:8080', { waitUntil: 'networkidle0' });
 
-  // KEEP only resume-preview
+  // REMOVE everything else from the body except resume-preview
   await page.evaluate(() => {
     const resume = document.getElementById('resume-preview');
     document.body.innerHTML = '';
@@ -21,8 +17,12 @@ import puppeteer from 'puppeteer';
     path: 'resume.pdf',
     format: 'A4',
     printBackground: true,
-    scale: 0.92,
-    margin: { top: '0.25in', right: '0.25in', bottom: '0.25in', left: '0.25in' }
+    margin: {
+      top: '0.3in',
+      right: '0.3in',
+      bottom: '0.3in',
+      left: '0.3in',
+    }
   });
 
   await browser.close();

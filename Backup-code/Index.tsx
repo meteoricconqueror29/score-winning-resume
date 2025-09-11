@@ -1,3 +1,4 @@
+
 import ResumePreview from '@/components/resume/ResumePreview';
 
 export interface PersonalInfo {
@@ -27,6 +28,7 @@ export interface Project {
   name: string;
   description: string;
   tech: string[];
+  // link?: string;
 }
 
 export interface Education {
@@ -57,7 +59,7 @@ const Index = () => {
       linkedin: 'linkedin.com/in/dipayan-majumdar',
       website: 'dipayan-portfolio.dev',
       github: 'github.com/MeteoricConqueror29',
-      summary: '' // removed from preview
+      summary: 'Full Stack Developer specializing in Laravel & DevOps with proven experience.'
     },
     experience: [
       {
@@ -70,12 +72,12 @@ const Index = () => {
         current: true,
         description: [
           'Spearheaded end-to-end development lifecycle from architecture to deployment, ensuring scalable and secure solutions.',
-          'Built a **Laravel-based multi-marketplace admin panel** for products, orders, and suppliers across Shopify, Amazon, Walmart, Wayfair, Houzz, and eBay.',
-          'Improved backend efficiency with **Redis queues, workers, and cron jobs**, reducing marketplace sync errors by **60%**.',
-          'Designed internal admin UIs with **Filament**, delivering clean and functional dashboards.',
-          'Deployed production-grade systems on **AWS EC2, RDS, S3, Nginx, Supervisor, HTTPS**.',
-          'Developed an **Electronic Medical Records (EMR) platform** integrated with **Surescripts**, enabling secure prescription workflows and healthcare data exchange.',
-          'Currently building an **AI-powered Form Builder** (Frontend: **React/Node.js** – dynamic form with real-time results; Backend: **Python** – AI-driven logic for intelligent form processing).'
+          'Built a Laravel-based multi-marketplace admin panel for products, orders, and suppliers across Shopify, Amazon, Walmart, Wayfair, Houzz, and eBay.',
+          'Improved backend efficiency with Redis queues, workers, and cron jobs, reducing marketplace sync errors by 60%',
+          'Designed internal admin UIs with Filament, delivering clean and functional dashboards.',
+          'Deployed production-grade systems on AWS EC2, RDS, S3, Nginx, Supervisor, HTTPS.',
+          'Worked on Electronic Medical Records (EMR) platform integrated with Surescripts, enabling secure prescription workflows and healthcare data exchange.',
+          'Currently building an AI-powered Form Builder: Frontend (React/Node.js): Dynamic input form and real-time result display. Backend (Python): AI-driven logic for intelligent form processing and recommendations.'
         ]
       },
       {
@@ -87,9 +89,9 @@ const Index = () => {
         endDate: '2024-12',
         current: false,
         description: [
-          'Built secure backend modules for **Paytia (PCI-DSS Level 1 fintech platform)** with encryption and tokenization.',
-          'Integrated payment gateways: **Stripe, PayPal, Braintree**, enabling secure digital transactions.',
-          'Implemented **Twilio-based SMS payments** and **WebRTC** for real-time secure calls.'
+          'Built secure backend modules for Paytia (PCI-DSS Level 1 fintech platform) with encryption and tokenization.',
+          'Integrated payment gateways: Stripe, PayPal, Braintree, enabling secure digital transactions.',
+          'IImplemented Twilio-based SMS payments and WebRTC for real-time secure calls.'
         ]
       },
       {
@@ -101,16 +103,16 @@ const Index = () => {
         endDate: '2023-12',
         current: false,
         description: [
-          'Developed modular, real-time gaming UIs using **ReactJS** and **WebSockets**.',
+          'Developed modular, real-time gaming UIs using ReactJS and WebSockets.',
           'Improved rendering performance by optimizing memory-heavy components.',
-          'Collaborated with designers and QA to enhance player experience and stability.'
+          'ICollaborated with designers and QA to enhance player experience and stability.',
         ]
       }
     ],
     education: [
       {
         id: '1',
-        institution: 'UTU',
+        institution: 'Dev Bhoomi Institute of Technology, Uttarakhand Technical University',
         degree: 'B.Tech',
         field: 'Computer Science & Engineering',
         location: '',
@@ -119,57 +121,57 @@ const Index = () => {
       },
       {
         id: '2',
-        institution: 'MMVV Vidya Mandir',
+        institution: 'MMVVdyaMandir',
         degree: 'Higher Secondary (10+2)',
         field: 'WBCHSE',
         location: '',
         graduationDate: '2019-05',
         gpa: '8.72'
       },
-      // {
-      //   id: '3',
-      //   institution: 'MMVV Vidya Mandir',
-      //   degree: 'Secondary (10th)',
-      //   field: 'WBBSE',
-      //   location: '',
-      //   graduationDate: '2017-05',
-      //   gpa: '8.33'
-      // }
+      {
+        id: '3',
+        institution: 'MMVVdyaMandir',
+        degree: 'Secondary (10th)',
+        field: 'WBBSE',
+        location: '',
+        graduationDate: '2017-05',
+        gpa: '8.33'
+      }
     ],
     skills: [
       'PHP', 'Laravel', 'CodeIgniter', 'Filament', 'Livewire', 'Blade',
       'React.js', 'JavaScript', 'Inertia.js', 'Alpine.js', 'HTML', 'CSS', 'Tailwind CSS',
       'MySQL', 'Redis', 'Amazon RDS', 'Amazon S3',
-      // 'Shopify API', 'Amazon SP-API', 'Walmart API', 'Wayfair API', 'Houzz API', 'eBay API',
-      'Stripe', 'PayPal', 'Braintree', 'Twilio', 'WebRTC', 'Webhooks',
-      'Git', 'AWS EC2', 'Nginx', 'Supervisor', 'Linux', 'Docker', 'Postman', 'VS Code'
+      'Shopify API', 'Amazon SP-API', 'Walmart API', 'Wayfair API', 'Houzz API', 'eBay API',
+      'Stripe', 'PayPal', 'Twilio', 'WebRTC', 'Webhooks',
+      'Git', 'AWS EC2', 'Nginx', 'Supervisor', 'Linux', 'Postman', 'VS Code'
     ],
     projects: [
       {
         id: '1',
         name: 'Real-Time Chat Application',
-        description: 'Built a full-featured messaging app with instant messaging, emoji/markdown support, file sharing, group management, and async background jobs using **React, Laravel, WebSockets, Redis**.',
-        tech: ['ReactJS', 'Laravel', 'WebSockets', 'Redis']
+        description: 'Built a full-featured messaging app with instant messaging, emoji/markdown support, file sharing, group management, and responsive UI. Used background jobs for async processing.',
+        tech: ['ReactJS', 'Laravel', 'WebSockets', 'Redis'],
       },
       {
         id: '2',
         name: 'Multi-Vendor E-commerce Marketplace',
-        description: 'Developed a full-stack system with vendor dashboard, real-time UI, SSR, role-based access, and integrated Stripe for payments using **Laravel, React (TypeScript), Inertia.js v2, Filament**.',
-        tech: ['Laravel', 'React (TypeScript)', 'Inertia.js v2', 'Filament', 'Stripe']
+        description: 'Developed a full-stack system with vendor dashboard, real-time UI, SSR, role-based access, and integrated Stripe for payments.',
+        tech: ['Laravel', 'React (TypeScript)', 'Inertia.js v2', 'FilamentPHP', 'Stripe'],
       },
       {
         id: '3',
         name: 'Social Media Website',
-        description: 'Created a small social platform with timelines, posts, likes/comments using **Laravel, Vue.js, Inertia.js, Tailwind CSS**, deployed on shared hosting.',
-        tech: ['Laravel', 'Vue.js', 'Inertia.js', 'Tailwind CSS']
+        description: 'Created a small social platform with timelines, posts, likes/comments using Laravel and Vue.js, deployed on shared hosting.',
+        tech: ['Laravel', 'Vue.js', 'Inertia.js', 'Tailwind CSS'],
       },
-      // {
-      //   id: '4',
-      //   name: 'Car Selling Website',
-      //   description: 'Simple car listing/selling platform built with **Laravel**, supporting user-friendly submissions and browsing.',
-      //   tech: ['Laravel']
-      // }
-    ]
+      {
+        id: '4',
+        name: 'Car Selling Website',
+        description: 'Simple car listing/selling site built with Laravel, supporting user-friendly submissions and browsing.',
+        tech: ['Laravel'],
+      }
+    ]    
   };
 
   return (
