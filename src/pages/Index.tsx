@@ -25,7 +25,7 @@ export interface Experience {
 export interface Project {
   id: string;
   name: string;
-  description: string;
+  description: string[];
   tech: string[];
 }
 
@@ -55,7 +55,7 @@ const Index = () => {
       phone: '8851462360',
       location: '',
       linkedin: 'linkedin.com/in/dipayan-majumdar',
-      website: 'dipayan-portfolio.dev',
+      website: 'krnlreaper.dev',
       github: 'github.com/MeteoricConqueror29',
       summary: '' // removed from preview
     },
@@ -63,19 +63,23 @@ const Index = () => {
       {
         id: '1',
         company: 'LetUsCode Systems Pvt. Ltd.',
-        position: 'Full Stack Developer',
+        position: 'Full Stack Developer | Applied AI Engineer',
         location: '',
         startDate: '2025-01',
         endDate: '',
         current: true,
         description: [
-          'Spearheaded end-to-end development lifecycle from architecture to deployment, ensuring scalable and secure solutions.',
-          'Built a **Laravel-based multi-marketplace admin panel** for products, orders, and suppliers across Shopify, Amazon, Walmart, Wayfair, Houzz, and eBay.',
-          'Improved backend efficiency with **Redis queues, workers, and cron jobs**, reducing marketplace sync errors by **60%**.',
-          'Designed internal admin UIs with **Filament**, delivering clean and functional dashboards.',
-          'Deployed production-grade systems on **AWS EC2, RDS, S3, Nginx, Supervisor, HTTPS**.',
-          'Developed an **Electronic Medical Records (EMR) platform** integrated with **Surescripts**, enabling secure prescription workflows and healthcare data exchange.',
-          'Currently building an **AI-powered Form Builder** (Frontend: **React/Node.js** – dynamic form with real-time results; Backend: **Python** – AI-driven logic for intelligent form processing).'
+          'Built a production **RAG + agentic AI** platform using **OpenAI tool/function calling, LangChain, Pinecone (vector DB), and LLM workflows** for document Q&A and real-time actions (APIs, DB ops, workflows).',
+          'Implemented an **ingestion + embedding** pipeline: **Firecrawl** and **LangChain** (auto-cleaning, chunking) → **text-3-embedding-large** → **Pinecone** for high-quality vector indexing.',
+          'Implemented **hybrid retrieval + reranking** (semantic + keyword) with tuned Pinecone indexing, improving answer relevance and reducing hallucinations.',
+          'Designed structured-data querying with **DuckDB + LangChain SQL Agent** (NL→SQL) over CSV/Excel via S3, enabling precise financial and operational answers in chat.',
+          'Implemented Dockerization and **CI/CD** pipelines using GitHub Actions for automated deployment of AI and backend services.',
+          'Delivered a **document parsing and order automation** pipeline using **Docling + NuExtract 8B** to map invoices/orders into canonical JSON and trigger ERP order creation.',
+          'Shipped the automation system in **~6 working days** and replaced **3–4 manual analysts**; **lower cost** than managed OCR (**Amazon Textract**) while maintaining high extraction accuracy.',
+          'Deployed GPU-based **microservices** (Docling, NuExtract 8B) on AWS (g5.4xlarge), exposing **FastAPI** endpoints and integrating with Python backend for scalable document processing',
+          'Built a **Laravel + Filament** multi-marketplace platform integrating **Shopify, Amazon, Walmart, Wayfair, Houzz, and eBay** for synchronized product and order workflows.',
+          'Optimized backend reliability using **Redis queues/workers/cron**, reducing marketplace sync errors by **60%**.',
+          'Deployed and maintained production systems on **AWS (EC2, RDS, S3)** with **Nginx, Redis, Supervisor, and HTTPS** across AI and full-stack products.'
         ]
       },
       {
@@ -87,9 +91,9 @@ const Index = () => {
         endDate: '2024-12',
         current: false,
         description: [
-          'Built secure backend modules for **Paytia (PCI-DSS Level 1 fintech platform)** with encryption and tokenization.',
-          'Integrated payment gateways: **Stripe, PayPal, Braintree**, enabling secure digital transactions.',
-          'Implemented **Twilio-based SMS payments** and **WebRTC** for real-time secure calls.'
+          'Developed secure backend modules for a fintech platform (**PCI-DSS Level 1**), implementing encryption and tokenization for sensitive data.',
+          'Integrated payment gateways (**Stripe, PayPal, Braintree**) enabling reliable and secure transactions.',
+          'Implemented Twilio-based SMS payments and WebRTC for real-time secure communication.'
         ]
       },
       {
@@ -101,9 +105,9 @@ const Index = () => {
         endDate: '2023-12',
         current: false,
         description: [
-          'Developed modular, real-time gaming UIs using **ReactJS** and **WebSockets**.',
-          'Improved rendering performance by optimizing memory-heavy components.',
-          'Collaborated with designers and QA to enhance player experience and stability.'
+          'Developed modular real-time gaming UIs using **ReactJS** and **WebSockets**.',
+          'Improved rendering performance by optimizing memory-intensive components.',
+          'Collaborated with design and QA teams to enhance user experience and stability.'
         ]
       }
     ],
@@ -137,30 +141,60 @@ const Index = () => {
       // }
     ],
     skills: [
-      'PHP', 'Laravel', 'CodeIgniter', 'Filament', 'Livewire', 'Blade',
-      'React.js', 'JavaScript', 'Inertia.js', 'Alpine.js', 'HTML', 'CSS', 'Tailwind CSS',
-      'MySQL', 'Redis', 'Amazon RDS', 'Amazon S3',
-      // 'Shopify API', 'Amazon SP-API', 'Walmart API', 'Wayfair API', 'Houzz API', 'eBay API',
-      'Stripe', 'PayPal', 'Braintree', 'Twilio', 'WebRTC', 'Webhooks',
-      'Git', 'AWS EC2', 'Nginx', 'Supervisor', 'Linux', 'Docker', 'Postman', 'VS Code'
+      'RAG', 'LLMs', 'OpenAI', 'LangChain', 'Pinecone', 'OpenRouter', 'Prompt Engineering',
+      'PHP', 'Laravel', 'CodeIgniter', 'Node.js', 'Express', 'FastAPI', 'Flask', 'Filament', 'Livewire',
+      'ReactJS', 'JavaScript', 'TypeScript', 'Inertia.js', 'Alpine.js', 'HTML', 'CSS', 'Tailwind',
+      'MySQL', 'Redis', 'DuckDB', 'Amazon RDS', 'S3',
+      'REST APIs', 'Webhooks', 'Shopify API', 'Amazon SP-API', 'Walmart', 'Wayfair', 'Houzz', 'eBay', 'Amazon Textract', 'Clerk Auth',
+      'Stripe', 'PayPal', 'Twilio', 'WebRTC',
+      'Git', 'AWS', 'Docker', 'Nginx', 'Supervisor', 'Linux', 'Postman', 'GitHub Actions', 'Cursor'
     ],
     projects: [
       {
         id: '1',
-        name: 'Real-Time Chat Application',
-        description: 'Built a full-featured messaging app with instant messaging, emoji/markdown support, file sharing, group management, and async background jobs using **React, Laravel, WebSockets, Redis**.',
-        tech: ['ReactJS', 'Laravel', 'WebSockets', 'Redis']
+        name: 'KrishiMart (Freelance Project)',
+        description: [
+          'Built and deployed a live e-commerce platform used by real customers (**URL:** [krishimart.in](https://krishimart.in/)) using **Laravel**.',
+          'Implemented end-to-end workflows including product catalog, order management, and payment processing.',
+          'Developed and published a companion **Flutter** app integrated with backend services.'
+        ],
+        tech: ['Laravel', 'Flutter']
       },
       {
         id: '2',
-        name: 'Multi-Vendor E-commerce Marketplace',
-        description: 'Developed a full-stack system with vendor dashboard, real-time UI, SSR, role-based access, and integrated Stripe for payments using **Laravel, React (TypeScript), Inertia.js v2, Filament**.',
-        tech: ['Laravel', 'React (TypeScript)', 'Inertia.js v2', 'Filament', 'Stripe']
+        name: 'AxesInExcess (Freelance Project)',
+        description: [
+          'Developed a custom e-commerce platform and admin panel for a live client (**URL:** [axesinexcess.com](https://www.axesinexcess.com)) using **Laravel**.',
+          'Built features for product management, order workflows, and backend operations with a scalable architecture.',
+          'Implemented secure APIs and optimized performance for smooth user and admin experience.'
+        ],
+        tech: ['Laravel', 'REST APIs']
       },
       {
         id: '3',
+        name: 'Real-Time Chat Application',
+        description: [
+          'Built a real-time messaging system with **WebSockets** (instant messaging, groups, file sharing).',
+          'Implemented async jobs and a scalable backend using **Laravel + Redis**.'
+        ],
+        tech: ['ReactJS', 'Laravel', 'WebSockets', 'Redis']
+      },
+      {
+        id: '4',
+        name: 'Multi-Vendor E-commerce Marketplace',
+        description: [
+          'Developed a full-stack marketplace with vendor dashboard and role-based access.',
+          'Integrated Stripe payments and SSR using **Laravel + React (TypeScript)**.'
+        ],
+        tech: ['Laravel', 'React (TypeScript)', 'Inertia.js v2', 'Filament', 'Stripe']
+      },
+      {
+        id: '5',
         name: 'Social Media Website',
-        description: 'Created a small social platform with timelines, posts, likes/comments using **Laravel, Vue.js, Inertia.js, Tailwind CSS**, deployed on shared hosting.',
+        description: [
+          'Built a social platform with timelines, posts, and interactions.',
+          'Implemented backend using **Laravel** and frontend with **Vue.js + Inertia.js**.'
+        ],
         tech: ['Laravel', 'Vue.js', 'Inertia.js', 'Tailwind CSS']
       },
       // {

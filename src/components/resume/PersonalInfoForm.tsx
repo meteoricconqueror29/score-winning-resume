@@ -17,7 +17,7 @@ const PersonalInfoForm = ({ personalInfo, onUpdate }: PersonalInfoFormProps) => 
     phone: '8851462360',
     location: '',
     linkedin: 'linkedin.com/in/dipayan-majumdar',
-    website: 'dipayan-portfolio.dev',
+    website: 'krnlreaper.dev',
     github: 'github.com/MeteoricConqueror29',
     summary: 'Full Stack Developer with hands-on experience building modern web applications using the TALL stack and JavaScript frameworks. Proven track record in developing secure payment systems and real-time features, with professional experience across both e-commerce marketplaces and fintech platforms. Currently leading the development of multi-channel inventory and order management systems. Previously contributed to PCI-DSS Level 1 compliant payment solutions at Paytia, focusing on backend architecture and data security with DevOps practices.'
   });
